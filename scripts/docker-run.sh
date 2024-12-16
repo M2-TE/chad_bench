@@ -13,6 +13,7 @@ if [ $CHAD_GPU = "none" ]; then
         --name chadbench \
         --publish 7008:7008/udp \
         --publish 7009:7009/udp \
+        --cap-add sys_nice \
         --ulimit nofile=1024 \
         --volume $(pwd)/$(dirname "$0")/..:/root/repo/:Z \
         chadbench:latest
@@ -24,6 +25,7 @@ elif [ $CHAD_GPU = "integrated" ]; then
         --name chadbench \
         --publish 7008:7008/udp \
         --publish 7009:7009/udp \
+        --cap-add sys_nice \
         --ulimit nofile=1024 \
         --env DISPLAY=${DISPLAY} \
         --volume "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
@@ -37,6 +39,7 @@ elif [ $CHAD_GPU = "nvidia" ]; then
         --name chadbench \
         --publish 7008:7008/udp \
         --publish 7009:7009/udp \
+        --cap-add sys_nice \
         --ulimit nofile=1024 \
         --runtime nvidia \
         --gpus all \
