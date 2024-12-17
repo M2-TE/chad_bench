@@ -3,3 +3,5 @@ build/
 log/
 bags/
 *-metadata.json
+*.grid
+*.ply
