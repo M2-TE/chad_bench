@@ -26,11 +26,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     # VDBFusion
     build-essential cmake git python3 python3-dev python3-pip libjemalloc-dev libtbb-dev ros-humble-openvdb-vendor libboost-iostreams-dev libblosc-dev
 
-# CUDA deps for nvblox
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb \
-    && dpkg -i cuda-keyring_1.1-1_all.deb \
-    && apt-get update && apt-get -y install cuda-toolkit-12-8 \
-    && apt-get install -y libgoogle-glog-dev libgtest-dev libgflags-dev python3-dev libsqlite3-dev libbenchmark-dev
+# # CUDA deps for nvblox
+# RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb \
+#     && dpkg -i cuda-keyring_1.1-1_all.deb \
+#     && apt-get update && apt-get -y install cuda-toolkit-12-8 \
+#     && apt-get install -y libgoogle-glog-dev libgtest-dev libgflags-dev python3-dev libsqlite3-dev libbenchmark-dev
 
 # rosbag converter tool
 RUN pip install rosbags
@@ -48,9 +48,9 @@ ENV IMU_TOPIC=/ouster/imu
 ENV RVIZ_OUSTER=false
 ENV RVIZ_DLIO=false
 # cuda specific
-ENV CUDA_PATH=/usr/local/cuda
-ENV CUDA_BIN_PATH=/usr/local/cuda/bin
-ENV CUDA_LIB_PATH=/usr/local/cuda/lib64
-ENV CUDA_INCLUDE_PATH=/usr/local/cuda/include
-ENV PATH=$PATH:/usr/local/cuda/bin
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+# ENV CUDA_PATH=/usr/local/cuda
+# ENV CUDA_BIN_PATH=/usr/local/cuda/bin
+# ENV CUDA_LIB_PATH=/usr/local/cuda/lib64
+# ENV CUDA_INCLUDE_PATH=/usr/local/cuda/include
+# ENV PATH=$PATH:/usr/local/cuda/bin
+# ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64

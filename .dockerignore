@@ -6,3 +6,6 @@ install/
 log/
 scripts/
 src/
+*.grid
+*.csv
+*.ply

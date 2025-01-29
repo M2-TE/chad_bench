@@ -5,3 +5,4 @@ bags/
 *-metadata.json
 *.grid
 *.ply
+*.csv
