@@ -4,8 +4,8 @@
 	branch = ros2
 [submodule "src/direct_lidar_inertial_odometry"]
 	path = src/direct_lidar_inertial_odometry
-	url = https://github.com/vectr-ucla/direct_lidar_inertial_odometry.git
-	branch = feature/ros2
+	url = https://github.com/M2-TE/direct_lidar_inertial_odometry.git
+	branch = feature/ros2-prod
 [submodule "src/chad_ros"]
 	path = src/chad_ros
 	url = https://github.com/M2-TE/chad_ros.git
