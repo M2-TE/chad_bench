@@ -38,7 +38,6 @@ RUN pip install rosbags
 # clean up image to reduce size
 RUN rm -rf /var/lib/apt/lists/*
 
-
 WORKDIR /root/repo/
 ENTRYPOINT [ "/bin/bash", "/root/repo/scripts/.entrypoint.sh" ]
 ENV ROSCONSOLE_FORMAT='[ROS${severity}]: ${message}'
