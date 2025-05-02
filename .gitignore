@@ -6,3 +6,4 @@ bags/
 *.grid
 *.ply
 *.csv
+*.asc

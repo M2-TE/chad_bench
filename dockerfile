@@ -24,14 +24,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libvtk9-dev libvtk9-qt-dev libboost-all-dev freeglut3-dev libhdf5-dev qtbase5-dev \
     libqt5opengl5-dev liblz4-dev libopencv-dev libyaml-cpp-dev libspdlog-dev \
     # VDBFusion
-    build-essential cmake git python3 python3-dev python3-pip libjemalloc-dev libtbb-dev ros-humble-openvdb-vendor libboost-iostreams-dev libblosc-dev
-
-# # CUDA deps for nvblox
-# RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb \
-#     && dpkg -i cuda-keyring_1.1-1_all.deb \
-#     && apt-get update && apt-get -y install cuda-toolkit-12-8 \
-#     && apt-get install -y libgoogle-glog-dev libgtest-dev libgflags-dev python3-dev libsqlite3-dev libbenchmark-dev
-
+    build-essential cmake git python3 python3-dev python3-pip libjemalloc-dev libtbb-dev ros-humble-openvdb-vendor libboost-iostreams-dev libblosc-dev \
+    # Octomap
+    ros-humble-octomap
+    
 # rosbag converter tool
 RUN pip install rosbags
 
