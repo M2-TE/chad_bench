@@ -48,6 +48,12 @@ elif [ $CHAD_GPU = "nvidia" ]; then
         --env __GLX_VENDOR_LIBRARY_NAME=nvidia \
         --env NVIDIA_VISIBLE_DEVICES=all \
         --env NVIDIA_DRIVER_CAPABILITIES=all \
+        --env CUDA_PATH=/usr/local/cuda \
+        --env CUDA_BIN_PATH=/usr/local/cuda/bin \
+        --env CUDA_LIB_PATH=/usr/local/cuda/lib64 \
+        --env CUDA_INCLUDE_PATH=/usr/local/cuda/include \
+        --env LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64 \
+        --env PATH=$PATH:/usr/local/cuda/bin \
         --volume "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
         --volume $(pwd)/$(dirname "$0")/..:/root/repo/:Z \
         chadbench:latest
